@@ -15,7 +15,7 @@ const onPlay = () => {
 
   //   ws.binaryType = 'arraybuffer'
 
-  ws.onopen = function (event) {
+  ws.onopen = function () {
     console.log('WebSocket is open now.')
   }
 
@@ -32,7 +32,7 @@ const onPlay = () => {
     }
   }
 
-  ws.onclose = function (event) {
+  ws.onclose = function () {
     console.log('WebSocket is closed now.')
   }
 }

@@ -5,7 +5,7 @@
     ref="danmuRef"
     width="500"
     height="500"
-    style="display: inline-block; position: relative; left: -500px"
+    style="position: relative; left: -500px; display: inline-block"
   ></canvas>
 
   <ElButton @click="onPlay" size="small" type="primary">开始</ElButton>
@@ -30,10 +30,6 @@ onMounted(() => {
   dm.value.init()
 })
 
-const getWebSocketClent = (url: string) => {
-  const clent = new WebSocket(url)
-}
-
 const onPlay = async () => {
   const mediaStream = await window.navigator.mediaDevices.getUserMedia({
     audio: true,
@@ -49,7 +45,7 @@ const onPlay = async () => {
 
   const mediaRecorder = new MediaRecorder(mediaStream, { mimeType: 'video/webm;codecs=vp9' })
 
-  webSocketClient.onopen = function (event) {
+  webSocketClient.onopen = function () {
     console.log('WebSocket is open now.')
 
     mediaRecorder.ondataavailable = function (event) {
@@ -65,7 +61,7 @@ const onPlay = async () => {
     mediaRecorder.start(25)
   }
 
-  webSocketClient.onclose = function (event) {
+  webSocketClient.onclose = function () {
     console.log('WebSocket is closed now.')
     mediaRecorder.stop()
   }
