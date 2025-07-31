@@ -8,7 +8,7 @@
   "scripts": {
     "api": "node ./api.service.cjs",
     "websocket": "node websocket-serve.cjs",
-    "i": "pnpm install",
+    "i": "set NODE_OPTIONS=--max_old_space_size=4096 && pnpm install",
     "dev": "pnpm vite --mode base",
     "ts:check": "pnpm vue-tsc --noEmit --skipLibCheck",
     "build:pro": "cross-env NODE_OPTIONS=--max_old_space_size=4096 && pnpm vite build --mode pro",
