@@ -57,7 +57,7 @@
 <script setup lang="ts">
 import { nextTick, ref } from 'vue'
 
-import { ElButton, ElAvatar, ElInput, ElCard, ElPopover } from 'element-plus'
+import { ElButton, ElAvatar, ElInput, ElCard } from 'element-plus'
 import { useRoute } from 'vue-router'
 const route = useRoute()
 
@@ -134,9 +134,10 @@ const onSend = () => {
 
   .user-list {
     width: 300px;
-    border: 1px solid #ccc;
     margin: 0 10px;
     overflow-y: auto;
+    border: 1px solid #ccc;
+
     .select-item {
       border: red;
     }
@@ -146,22 +147,24 @@ const onSend = () => {
       width: 280;
       margin: 10px;
       cursor: pointer;
+
       .user-name {
         margin-left: 10px;
       }
     }
   }
+
   .chatroom-msage-panel {
     flex: 1;
-
     display: flex;
     flex-direction: column;
 
     .msg {
-      border: 1px solid #ccc;
       margin-bottom: 5px;
-      flex: 1;
       overflow-y: auto;
+      border: 1px solid #ccc;
+      flex: 1;
+
       .user-msg {
         display: flex;
         align-items: center;
@@ -171,12 +174,14 @@ const onSend = () => {
         .user-msg-content {
           display: flex;
           align-items: center;
+
           .arrow {
             width: 0;
             height: 0;
             border-top: 5px solid transparent;
             border-bottom: 5px solid transparent;
           }
+
           .left {
             border-left: 10px solid #ccc;
           }
@@ -186,10 +191,10 @@ const onSend = () => {
           }
 
           .content {
-            flex: 1;
+            padding: 0 10px;
             border: 1px solid #ccc;
             border-radius: 10px;
-            padding: 0px 10px;
+            flex: 1;
           }
         }
       }
@@ -210,8 +215,8 @@ const onSend = () => {
 
     .btns {
       height: 30px;
-      text-align: right;
       padding-right: 10px;
+      text-align: right;
     }
   }
 }
